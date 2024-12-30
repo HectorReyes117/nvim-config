@@ -1,16 +1,16 @@
-local util = require 'lspconfig.util'
+local util = require("lspconfig.util")
 
 return {
   default_config = {
-    cmd = { 'vscode-html-language-server', '--stdio' },
-    filetypes = { 'html', 'templ' },
-    root_dir = util.root_pattern('package.json', '.git'),
+    cmd = { "vscode-html-language-server", "--stdio" },
+    filetypes = { "html", "templ" },
+    root_dir = util.root_pattern("package.json", ".git"),
     single_file_support = true,
     settings = {},
     init_options = {
       provideFormatter = true,
       embeddedLanguages = { css = true, javascript = true },
-      configurationSection = { 'html', 'css', 'javascript' },
+      configurationSection = { "html", "css", "javascript" },
     },
   },
   docs = {
