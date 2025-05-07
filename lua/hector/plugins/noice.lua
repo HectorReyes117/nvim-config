@@ -3,6 +3,11 @@ return {
   event = "VeryLazy",
   opts = {
     -- add any options heregit
+    views = {
+      notify = {
+        timeout = 3500,
+      },
+    },
   },
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
