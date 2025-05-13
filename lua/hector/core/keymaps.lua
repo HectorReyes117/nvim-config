@@ -35,3 +35,25 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+--ToggleTerm
+keymap.set("n", "<C-t>", "<Cmd>exe v:count1 . 'ToggleTerm'<CR>", { silent = true, desc = "Toggle Terminal" })
+
+keymap.set(
+  "i",
+  "<C-t>",
+  "<Esc><Cmd>exe v:count1 . 'ToggleTerm'<CR>",
+  { silent = true, desc = "Toggle Terminal from insert" }
+)
+
+keymap.set(
+  "t",
+  "<C-t>",
+  [[<C-\><C-n><Cmd>exe v:count1 . "ToggleTerm"<CR>]],
+  { silent = true, desc = "Toggle Terminal from terminal mode" }
+)
+
+-- Floating terminal
+keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>", { desc = "Toggle Floating Terminal" }) -- Floating Terminal
+keymap.set("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<CR>", { desc = "Toggle Horizontal Terminal" }) -- Terminal horizontal
+keymap.set("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<CR>", { desc = "Toggle Vertical Terminal" }) -- Terminal vertical
